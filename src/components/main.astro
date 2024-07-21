@@ -1,0 +1,113 @@
+---
+interface Props {
+	title?: string,
+	desc?: string,
+	author?: string
+}
+
+import icon from "../../public/cpuicon.png";
+import fav from "../../public/circuiticon.png";
+import discord from "../../public/discord.svg"
+import cpuText from "../../public/cputext.svg"
+import {Image} from "astro:assets"
+import MainStyle from "./mainstyle.astro"
+import { discordUrl } from "../consts";
+
+import events from "../events.json";
+
+const {title, desc, author} = Astro.props;
+const d = desc ?? `The Competitive Programmers Union is a club at Purdue University focused on solving hard problems with correct code in contests hosted by the ICPC (International Collegiate Programming Contest), Codeforces, etc.`;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Competitive Programmers Union{title ? `- ${title}` : ""}</title>
+
+	<link rel="icon" href={fav.src} />
+
+	<meta name="description" content={d} >
+	<meta name="keywords" content="purdue,university,competitive,programming,club,union,programmers,icpc,codeforces,coding,cp" >
+	<meta name="author" content={author ?? "Purdue University"} >
+
+	<!-- Open Graph Tags -->
+	<meta property="og:title" content={title ?? "Competitive Programmers Union"} >
+	<meta property="og:description" content={d} >
+	<meta property="og:image" content={icon.src} >
+	<meta property="og:type" content="website">
+
+	<!-- Twitter Card Tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content={title ?? "Competitive Programmers Union"} >
+	<meta name="twitter:description" content={d} >
+	<meta name="twitter:image" content={icon.src} >
+
+	<MainStyle/>
+	<script>
+		const mq = window.matchMedia("(max-width: 800px)");
+
+		const g = (x: string) => document.getElementById(x)! as HTMLDivElement;
+		const hrs = [document.createElement("hr"), document.createElement("hr")];
+
+		function layout() {
+			const main=g("main"), cbefore=g("content-before"), cafter=g("content-after"), sidebar=g("sidebar"), content=g("content");
+			if (mq.matches) {
+				content.replaceChildren(cbefore,hrs[0],sidebar,hrs[1],cafter);
+			} else {
+				content.replaceChildren(cbefore,cafter);
+				main.replaceChildren(content, sidebar);
+			}
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+			g("main").style.flexWrap="nowrap";
+			layout();
+		});
+
+		mq.addEventListener("change", (ev) => layout());
+	</script>
+
+	<slot name="head" />
+</head>
+<body>
+	<div id="hdr" >
+		<slot name="hdr" >
+			<a class="nostyle" href="/" ><Image src={cpuText} alt="" class="small" /></a>
+		</slot>
+	</div>
+	<div id="main" >
+    <div id="content" >
+			<div id="content-before" >
+				<slot/>
+			</div>
+			<div id="content-after" >
+				<slot name="after" />
+			</div>
+    </div>
+    <div id="sidebar" >
+			<slot name="sidebar" />
+			<a href={discordUrl} >
+				<button style="display: flex; flex-direction: column; gap: 15px; align-items: center" >
+					<Image alt="discord" width={40} src={discord} /> Join the Discord to keep up with club activities
+				</button>
+			</a>
+      <h3 class="top bracket" >events</h3>
+			<div id="events" style="display: flex; flex-direction: column; gap: 15px; align-items: stretch;" >
+			{
+				events.map((x) => 
+					<div class="frame" >
+						<b>{x.name}</b>
+						<p class="sub" >{x.time}</p>
+						<p class="bottom" >{x.desc}</p>
+					</div>
+				)
+			}
+			</div>
+    </div>
+  </div>
+	<div id="footer" >
+		<p>site by <a href="https://thomasqm.com" >Thomas Marlowe</a></p>
+	</div>
+</body>
+</html>

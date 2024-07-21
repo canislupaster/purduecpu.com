@@ -1,0 +1,118 @@
+---
+import { Image } from "astro:assets"
+import Main from "../components/main.astro"
+import logo from "../../public/logo.svg"
+import fame from "../fame.json"
+import { discordUrl } from "../consts";
+import cfIcon from "../../public/codeforces.svg"
+
+const cfs = fame.filter(x => typeof x.cf == "string").map((x) => x.cf);
+
+type CodeforcesUser = {
+  handle: string;
+  email?: string;
+  vkId?: string;
+  openId?: string;
+  firstName?: string;
+  lastName?: string;
+  country?: string;
+  city?: string;
+  organization?: string;
+  contribution: number;
+  rank?: string;
+  rating?: number;
+  maxRank?: string;
+  maxRating?: number;
+  lastOnlineTimeSeconds: number;
+  registrationTimeSeconds: number;
+  friendOfCount: number;
+  avatar: string;
+  titlePhoto: string;
+}
+
+const res = await (await fetch(`https://codeforces.com/api/user.info?handles=${cfs.join(";")}&checkHistoricHandles=true`)).json();
+if (res.status!="OK") throw res.comment ?? "CF API error";
+const uarr = res.result as CodeforcesUser[];
+const users = new Map(cfs.map((x,i) => [x,uarr[i]]));
+
+const titleToColorMap: { [key: string]: string } = Object.fromEntries(Object.entries({
+  "Legendary Grandmaster": "Red",
+  "International Grandmaster": "Red",
+  "Grandmaster": "Red",
+  "International Master": "Orange",
+  "Master": "Orange",
+  "Candidate Master": "Violet",
+  "Expert": "Blue",
+  "Specialist": "Cyan",
+  "Pupil": "Green",
+  "Newbie": "Gray"
+}).map(([k,v]) => [k.toLowerCase(), v.toLowerCase()]));
+
+const colorToRgbMap: { [key: string]: string } = {
+  "red": "rgb(255, 0, 0)",
+  "orange": "rgb(255, 165, 0)",
+  "violet": "rgb(238, 130, 238)",
+  "blue": "rgb(0, 0, 255)",
+  "cyan": "rgb(0, 255, 255)",
+  "green": "rgb(0, 128, 0)",
+  "gray": "rgb(128, 128, 128)"
+};
+
+const fameCF = fame.map(x => {
+	const u = users.get(x.cf);
+	if (u==undefined) return {...x, cf: null};
+	let r = u.rank ?? "?";
+	r=`${r[0].toUpperCase()}${r.slice(1)}`;
+	return {...x, cf: {
+		handle: u.handle,
+		rating: `${u.rating ?? "?"}`,
+		rank: r,
+		color: colorToRgbMap[u.rank==undefined ? "gray" : titleToColorMap[u.rank.toLowerCase()]]
+	}};
+})
+
+---
+
+<Main>
+	<Fragment slot="hdr" >
+		<div class="frame no-border-mobile" >
+			<Image src={logo} alt="Competitive Programmers Union" style="max-width: 100vw; margin: 0;" />
+		</div>
+		<div class="frame" style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-around; gap: 40px; padding: 5px;" >
+			<div style="flex: 0.5; flex-basis: 200px;" >
+				<h2 style="text-align: right" class="top" >
+					The Competitive<br/>
+					Programmers Union
+				</h2>
+			</div>
+			<div style="flex: 0.5; flex-basis: 150px;" >
+				<h5>We write efficient, correct and concise code to solve modern problems.</h5>
+				<br/>
+				<h5>A Purdue student organization.</h5>
+			</div>
+		</div>
+	</Fragment>
+	<h3>Purdue's community for competitive programming</h3>
+	<p>
+		The CPU supports competitive programming at Purdue by participating in contests together and discussing solutions, hosting contests such as <a href="https://hammerwars.win">HammerWars</a>, welcoming beginners and fostering an active online presence.
+	</p>
+	<p>
+		We develop problem-solving skills that are invaluable today: not do they only appear frequently in technical interviews, but general strategies occur everywhere throughout computer science and mathematics. Join the <a href={discordUrl} >Discord</a> to share in the immense satisfaction of solving difficult problems!
+	</p>
+
+	<Fragment slot="after" >
+		<h3>Hall of fame</h3>
+		<style>#fame p {margin: 3px 0; text-indent: 0;}</style>
+		<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 15px" id="fame" >
+			{fameCF.map(x => <div class="frame" style="flex-basis: 300px; flex-grow: 1;" >
+				<p><b>{x.name}</b></p>{x.cf==null ? <></> : <p>
+					<a style={{class: "cf sub", color: x.cf.color}} href={`https://codeforces.com/profile/${x.cf.handle}`} >
+						<Image alt="codeforces" src={cfIcon} width={20} />{x.cf.handle} ({x.cf.rating})
+					</a>
+				</p>}
+				<p><i class="sub" >{x.status}</i>
+				</p>
+			</div>)}
+		</div>
+	</Fragment>
+</Main>

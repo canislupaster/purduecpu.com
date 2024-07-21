@@ -1,0 +1,1 @@
+export const discordUrl = "https://discord.com/users/820410002955042818";
