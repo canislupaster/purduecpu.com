@@ -1,5 +1,5 @@
 export $(cat .deployenv | xargs)
-cd client && npm run build && cd ..
+cd .. && npm run build && cd server
 ./gradlew distZip
 scp build/distributions/*.zip $REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH
 ssh -tt $REMOTE_USER@$REMOTE_HOST "

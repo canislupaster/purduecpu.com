@@ -1,12 +1,22 @@
 [
 	{
+		"name": "2024 NAQ",
+		"desc": "The 2024 NAQ is happening! There will be pizza to accompany this 5-hour contest.",
+		"time": "Oct. 5th, 2-7 pm in LWSN 3102AB"
+	},
+	{
 		"name": "B-Involved Fair",
 		"desc": "Visit us at the club fair this fall!",
-		"time": "Aug. 17th, 2024, Intramural Gold Playing Fields (probably)"
+		"time": "Aug. 17th, Intramural Gold Playing Fields (probably)"
+	},
+	{
+		"name": "Codeforces Round 967",
+		"desc": "Join us to individually participate in CF Round 967, then discuss the problems afterwards.",
+		"time": "Aug. 20th, 10:30 AM in BRNG 7150"
 	},
 	{
 		"name": "Fall 2024 Callout",
-		"desc": "I have no idea what we're going to do but it will be fun",
-		"time": "TBD"
+		"desc": "Come for some coding games and pizza!",
+		"time": "Aug. 26th 6 to 7:30 PM in LWSN B155"
 	}
 ]

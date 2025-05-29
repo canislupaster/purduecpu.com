@@ -6,8 +6,13 @@
 	},
 	{
 		"name": "Zhongtang Luo",
-		"status": "President 2023-2024, current student, ICPC WF 2018 silver medal",
+		"status": "President 2023-2024, current student and CP3 instructor, ICPC WF 2018 silver medalist",
 		"cf": "zhtluo"
+	},
+	{
+		"name": "Arvind Ramaswami",
+		"status": "Current student and CP2 instructor, ICPC WF 2020",
+		"cf": "arvindr9"
 	},
 	{
 		"name": "Richard Li",
@@ -25,23 +30,58 @@
 		"cf": "devinqu"
 	},
 	{
+		"name": "Wilbert Chu",
+		"status": "Current student, ICPC NAC 25, WF 25",
+		"cf": "golomb"
+	},
+	{
 		"name": "Peter Jin",
-		"status": "Current student, ICPC WF 24",
+		"status": "Alumni, ICPC WF 24. bye petorz",
 		"cf": "shcal"
 	},
 	{
 		"name": "Minh Nguyen",
-		"status": "Current student (probably), ICPC WF 24",
+		"status": "ICPC WF 24",
 		"cf": "TomOwO"
 	},
 	{
 		"name": "Egor Gagushin",
-		"status": "Current student, ICPC WF 24",
+		"status": "Alumni, ICPC WF 24. rip egorz :(",
 		"cf": "eggag32"
 	},
 	{
 		"name": "Thomas Marlowe",
-		"status": "(Unqualified) president 2024-2025 🤡",
+		"status": "President 2024-2026, ICPC NAC 25, WF 25",
 		"cf": "canine"
+	},
+	{
+		"name": "Robert Lee",
+		"status": "Current student, ICPC NAC 25, WF 25",
+		"cf": "RobertYL"
+	},
+	{
+		"name": "Brijesh Patel",
+		"status": "Treasurer 2025-2026",
+		"cf": "bbpateljr19"
+	},
+	{
+		"name": "Arnav Arora",
+		"status": "Treasurer 2024-2025",
+		"cf": "iond"
+	},
+	{
+		"name": "Saarang Srinivasan",
+		"status": "Treasurer 2023-2024",
+		"cf": "saarang"
+	},
+	{
+		"name": "Owen Eckart",
+		"status": "Self-proclaimed mascot (unofficial)",
+		"cf": "Jellyman102"
+	},
+	{
+		"name": "Pratyanch Jain",
+		"status": "Official mascot (involuntary)",
+		"cf": "pratyanch_jain"
 	}
 ]

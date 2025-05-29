@@ -2,20 +2,21 @@
 interface Props {
 	title?: string,
 	desc?: string,
-	author?: string
+	author?: string,
+	hideSidebar?: boolean
 }
 
-import icon from "../../public/cpuicon.png";
-import fav from "../../public/circuiticon.png";
-import discord from "../../public/discord.svg"
-import cpuText from "../../public/cputext.svg"
+import icon from "./cpuicon.png";
+import fav from "./circuiticon.png";
+import discord from "./discord.svg"
+import cpuText from "./cputext.svg"
 import {Image} from "astro:assets"
 import MainStyle from "./mainstyle.astro"
 import { discordUrl } from "../consts";
 
 import events from "../events.json";
 
-const {title, desc, author} = Astro.props;
+const {title, desc, author, hideSidebar} = Astro.props;
 const d = desc ?? `The Competitive Programmers Union is a club at Purdue University focused on solving hard problems with correct code in contests hosted by the ICPC (International Collegiate Programming Contest), Codeforces, etc.`;
 ---
 <!DOCTYPE html>
@@ -23,7 +24,7 @@ const d = desc ?? `The Competitive Programmers Union is a club at Purdue Univers
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Competitive Programmers Union{title ? `- ${title}` : ""}</title>
+	<title>{title ? `CPU - ${title}` : "Competitive Programmers Union"}</title>
 
 	<link rel="icon" href={fav.src} />
 
@@ -47,11 +48,13 @@ const d = desc ?? `The Competitive Programmers Union is a club at Purdue Univers
 	<script>
 		const mq = window.matchMedia("(max-width: 800px)");
 
-		const g = (x: string) => document.getElementById(x)! as HTMLDivElement;
+		const g = (x: string) => document.getElementById(x) as HTMLDivElement;
 		const hrs = [document.createElement("hr"), document.createElement("hr")];
 
 		function layout() {
 			const main=g("main"), cbefore=g("content-before"), cafter=g("content-after"), sidebar=g("sidebar"), content=g("content");
+			if (!sidebar) return;
+
 			if (mq.matches) {
 				content.replaceChildren(cbefore,hrs[0],sidebar,hrs[1],cafter);
 			} else {
@@ -60,12 +63,12 @@ const d = desc ?? `The Competitive Programmers Union is a club at Purdue Univers
 			}
 		}
 
-		document.addEventListener("DOMContentLoaded", () => {
+		document.addEventListener("load", () => {
 			g("main").style.flexWrap="nowrap";
 			layout();
 		});
 
-		mq.addEventListener("change", (ev) => layout());
+		mq.addEventListener("change", () => layout());
 	</script>
 
 	<slot name="head" />
@@ -74,10 +77,11 @@ const d = desc ?? `The Competitive Programmers Union is a club at Purdue Univers
 	<div id="hdr" >
 		<slot name="hdr" >
 			<a class="nostyle" href="/" ><Image src={cpuText} alt="" class="small" /></a>
+			<slot name="afterhdr" />
 		</slot>
 	</div>
 	<div id="main" >
-    <div id="content" >
+    <div id="content" style="padding-top: 0" >
 			<div id="content-before" >
 				<slot/>
 			</div>
@@ -85,28 +89,27 @@ const d = desc ?? `The Competitive Programmers Union is a club at Purdue Univers
 				<slot name="after" />
 			</div>
     </div>
-    <div id="sidebar" >
+    {!hideSidebar && <div id="sidebar" >
 			<slot name="sidebar" />
 			<a href={discordUrl} >
 				<button style="display: flex; flex-direction: column; gap: 15px; align-items: center" >
 					<Image alt="discord" width={40} src={discord} /> Join the Discord to keep up with club activities
 				</button>
 			</a>
-      <h3 class="top bracket" >events</h3>
+      <h3 class="top bracket" >📅 events</h3>
 			<div id="events" style="display: flex; flex-direction: column; gap: 15px; align-items: stretch;" >
-			{
-				events.map((x) => 
-					<div class="frame" >
-						<b>{x.name}</b>
-						<p class="sub" >{x.time}</p>
-						<p class="bottom" >{x.desc}</p>
-					</div>
-				)
-			}
+			{events.map((x) => 
+				<div class="frame" >
+					<b>{x.name}</b>
+					<p class="sub" >{x.time}</p>
+					<p class="bottom" >{x.desc}</p>
+				</div>
+			)}
 			</div>
-    </div>
+    </div>}
   </div>
 	<div id="footer" >
+		<slot name="footer" />
 		<p>site by <a href="https://thomasqm.com" >Thomas Marlowe</a></p>
 	</div>
 </body>

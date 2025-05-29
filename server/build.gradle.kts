@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "2.0.0"
+    kotlin("jvm") version "2.1.0"
     kotlin("plugin.serialization") version "1.9.22"
     application
 }
@@ -23,10 +23,10 @@ dependencies {
     implementation("org.slf4j:slf4j-simple:2.0.12")
     implementation("org.slf4j:slf4j-api:2.0.12")
 
-//    implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
-//    implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
-//    implementation("org.jetbrains.exposed:exposed-json:$exposedVersion")
-//    implementation("org.jetbrains.exposed:exposed-java-time:$exposedVersion")
+    implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
+    implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
+    implementation("org.jetbrains.exposed:exposed-json:$exposedVersion")
+    implementation("org.jetbrains.exposed:exposed-java-time:$exposedVersion")
 
 //    implementation("io.ktor:ktor-client-core:2.3.9")
 //    implementation("io.ktor:ktor-client-cio:2.3.9")
@@ -34,11 +34,11 @@ dependencies {
 //    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.9")
 
 //    implementation("org.zeromq:jeromq:0.6.0")
-//    implementation("org.xerial:sqlite-jdbc:3.46.0.0")
+    implementation("org.xerial:sqlite-jdbc:3.46.0.0")
 }
 
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(23)
 }
 
 application {

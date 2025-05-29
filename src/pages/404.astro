@@ -1,6 +1,6 @@
 ---
 import Main from "../components/main.astro";
-import egor from "../../public/egor.gif"
+import egor from "./egor.gif"
 import { Image } from "astro:assets";
 
 ---
@@ -8,5 +8,5 @@ import { Image } from "astro:assets";
 <Main>
 	<h3>Oof. Not found</h3>
 	<p>Link broken? Let us know.</p>
-	<Image src={egor} alt="we love egor" style="width: 100%" ></Image>
+	<a href="/egor" ><Image src={egor} alt="we love egor" style="width: auto; max-height: 500px; aspect: 1" ></Image></a>
 </Main>

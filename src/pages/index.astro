@@ -1,10 +1,11 @@
 ---
 import { Image } from "astro:assets"
 import Main from "../components/main.astro"
-import logo from "../../public/logo.svg"
+import logo from "./logo.svg"
 import fame from "../fame.json"
 import { discordUrl } from "../consts";
-import cfIcon from "../../public/codeforces.svg"
+import cfIcon from "./codeforces.svg"
+import vscIcon from "./vscode.png"
 
 const cfs = fame.filter(x => typeof x.cf == "string").map((x) => x.cf);
 
@@ -86,19 +87,33 @@ const fameCF = fame.map(x => {
 				</h2>
 			</div>
 			<div style="flex: 0.5; flex-basis: 150px;" >
-				<h5>We write efficient, correct and concise code to solve modern problems.</h5>
-				<br/>
 				<h5>A Purdue student organization.</h5>
+				<br/>
+				<h5>We write efficient, correct and concise code to solve modern problems.</h5>
 			</div>
 		</div>
 	</Fragment>
+
+	<div class="bracket" style="padding-left: 2rem; padding-bottom: 1rem" >
+		<p class="rainbow" >
+			<i>Update: <a href="https://nac.icpc.global/scoreboard/2025/" >The Purdue Waffle Wizards</a> (Robert, Wilbert, and Thomas, coached by Ethan Dickey) are going to the <a href="https://worldfinals.icpc.global" >The 2025 ICPC World Finals in Baku</a>!</i>
+		</p>
+	</div>
+
 	<h3>Purdue's community for competitive programming</h3>
 	<p>
-		The CPU supports competitive programming at Purdue by participating in contests together and discussing solutions, hosting contests such as <a href="https://hammerwars.win">HammerWars</a>, welcoming beginners and fostering an active online presence.
+		The CPU supports competitive programming at Purdue by participating in contests together (notably, the <a href="https://icpc.global/" >ICPC</a> and occasional <a href="https://codeforces.com/" >Codeforces</a> contests) and discussing solutions. We also host contests such as <a href="https://hammerwars.win">HammerWars</a>, welcome beginners to the sport, and foster an active online presence.
 	</p>
 	<p>
-		We develop problem-solving skills that are invaluable today: not do they only appear frequently in technical interviews, but general strategies occur everywhere throughout computer science and mathematics. Join the <a href={discordUrl} >Discord</a> to share in the immense satisfaction of solving difficult problems!
+		We develop problem-solving skills that are invaluable today: not do they only appear frequently in technical interviews, but general strategies occur everywhere throughout computer science and mathematics. Join the <a href={discordUrl} >Discord</a> to get involved!
 	</p>
+	
+	<a href="/extension" >
+		<button style="display: flex; flex-direction: row; gap: 15px; align-items: center; justify-content: center" >
+			<Image src={vscIcon} width={40} alt="vscode" />
+			Check out our cool VSCode extension for competitive programming
+		</button>
+	</a>
 
 	<Fragment slot="after" >
 		<h3>Hall of fame</h3>

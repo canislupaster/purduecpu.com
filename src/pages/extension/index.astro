@@ -1,0 +1,151 @@
+---
+import Main from "../../components/main.astro";
+import interactive from "./interactive.png"
+import testio from "./testio.png"
+import hero from "./hero.png"
+import debug from "./debug.png"
+import stress from "./stress.png"
+import testeditor from "./testeditor.png"
+import { Image } from "astro:assets";
+---
+
+<Main title="VSCode Extension" hideSidebar >
+	<Fragment slot="head" >
+		<style >
+			.feature {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				flex-wrap: wrap;
+				gap: 17px;
+				max-width: 690px;
+			}
+
+			.desc {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+				gap: 8px;
+				flex-grow: 1;
+				width: 20rem;
+			}
+
+			#features .col {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			#features .row {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 20px;
+			}
+
+			#features {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 20px;
+			}
+
+			#features .frame {
+				filter: drop-shadow(1px 1px 5px #fff);
+			}
+
+			.heroimg {
+				max-height: 80dvh;
+				width: auto;
+				max-width: calc(min(100dvw,100%));
+				height: auto;
+			}
+
+			.medimg {
+				max-width: 30rem;
+				max-width: calc(min(20rem, 90dvw, 100%));
+				max-height: 30rem;
+				width: auto;
+				height: auto;
+			}
+
+			.smallimg {
+				max-height: 20rem;
+				max-width: calc(min(20rem, 90dvw, 100%));
+				height: auto;
+				width: auto;
+			}
+		</style>
+	</Fragment>
+
+	<Fragment slot="afterhdr" >
+		<!-- surely the more shadows, the better -->
+		<h1 style="text-shadow: 0 0 8px #000, 0 0 16px #000, 0 0 16px #000, 0 0 16px #000, 0 0 3px #000; margin-top: 0" >VSCode Extension</h1>
+	</Fragment>
+	
+	<div id="features" >
+		<Image src={hero} width={2000} class="heroimg" alt="Screenshot of test cases in sidebar" />
+
+		<div class="feature frame">
+			<Image src={testio} height={1000} class="smallimg" alt="Input and Output Handling" />
+			<div class="desc" >
+				<h3>Realtime Input/Output</h3>
+				<p>Unlike other test runners for VSCode, we let you use prewritten inputs and still interact with your program on the fly.</p>
+			</div>
+		</div>
+
+		<div class="frame col" >
+			<div class="feature" >
+				<Image height={1000} class="smallimg" src={interactive} alt="Interactive test" />
+
+				<div class="desc" >
+					<h3>Test Editor</h3>
+					<p>Extensive configuration and support for interactors.</p>
+				</div>
+			</div>
+
+			<Image height={1000} class="heroimg" src={testeditor} alt="Test settings & editor" style="max-width: min(100%,80dvw)" />
+		</div>
+
+		<div class="feature frame">
+			<Image height={1000} class="medimg" src={stress} alt="Stress Testing" />
+			<div class="desc" >
+				<h3>Stress Testing</h3>
+				<p>Run stress tests using a generator and brute force solution against your efficient solution. <a href="https://github.com/MikeMirzayanov/testlib" target="_blank" >testlib</a> is automatically included.</p>
+			</div>
+		</div>
+
+		<div class="feature frame">
+			<Image height={1000} class="medimg" src={debug} alt="Debugging" />
+			<div class="desc" >
+				<h3>Debugging</h3>
+				<p>Debug with CodeLLDB / debugpy / the Java extension for VSCode. Integrates with clangd to provide linting based on your compiler arguments.</p>
+			</div>
+		</div>
+
+		<div class="row" >
+			<div class="feature frame col desc">
+				<h6>Integrates with the <a href="https://github.com/jmerle/competitive-companion ">Competitive Companion</a> browser extension for one-click test imports</h6>
+				<p class="small" >Note: you can't use <a href="https://github.com/dj3500/hightail" >Hightail</a>'s Competitive Companion integration while this extension is active (they bind to the same port)</p>
+			</div>
+
+			<div class="feature frame col desc">
+				<h6>File I/O and directory import</h6>
+				<p>👌 Perfect for USACO 🐮</p>
+			</div>
+		</div>
+
+		<h4>Ready to give it a test?</h4>
+		<a href="https://marketplace.visualstudio.com/items?itemName=thomasqm.cpu" >
+			<button>Install from the Visual Studio Marketplace</button>
+		</a>
+	</div>
+
+	<Fragment slot="footer" >
+		<p><a href="https://github.com/canislupaster/cpu-vscode" >View on Github</a></p>
+		<p class="small" >Primarily tested on MacOS with C++ / clang. If you encounter any problems, please make an issue on Github!</p>
+	</Fragment>
+</Main>

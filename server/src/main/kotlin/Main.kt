@@ -74,6 +74,8 @@ fun Context.resp(err: APIError?=null, builder: JsonObjectBuilder.() -> Unit): Co
 
 suspend fun main(args: Array<String>) {
     runApp(args) {
+        val db = DB(environment)
+
         val isRevProxy = environment.getProperty("useForwardedFor")=="true"
         before {
             if (isRevProxy)

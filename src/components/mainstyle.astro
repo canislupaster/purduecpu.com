@@ -1,19 +1,18 @@
 ---
 ---
-<style is:global >
-	@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;800&display=swap');
-	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-	@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+<style is:global >
 	@font-face {
 		font-family: 'Monaspace Argon Var';
-		src: url('/MonaspaceArgonVar.ttf') format('ttf');
+		src: url(/MonaspaceArgonVar.ttf);
 		font-style: normal;
-		font-display: swap;
 	}
 
 	#body h1, #body h2, h1,h2,h3,h4,h5,h6 {
-		font-family: 'Montserrat', serif;
+		font-family: 'Montserrat', sans-serif;
 		font-weight: 800;
 		font-size: 2rem;
 		margin: 5px;
@@ -25,10 +24,10 @@
 		font-size: 110%;
 	}
 
-	code, pre {
+	/* code, pre {
 		font-family: 'Martian Mono', monospace;
 		font-weight: 300;
-	}
+	} */
 
 	h1,h2 {
 		font-size: 3rem;
@@ -52,10 +51,12 @@
 		align-items: center;
 		max-width: 100%;
 		padding: 20px 15px;
+		text-align: center;
 	}
 
 	#hdr img.small {
-		max-height: 15vh;
+		height: auto;
+		max-height: 15dvh;
 		max-width: 100%;
 	}
 
@@ -69,7 +70,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		width: 100%;
 		color: white;
 		vertical-align: middle;
 	}
@@ -91,11 +91,19 @@
 
 	#main > * {
 		padding-top: 20px;
-		padding: 0 20px;
 	}
 
 	#content p {
 		text-indent: 20px;
+	}
+	
+	p {
+		margin: 7px 10px; 
+	}
+
+	p.small {
+		font-size: 0.8rem;
+		color: #c3c3c3;
 	}
 
 	div.article {
@@ -135,7 +143,7 @@
 
 	button:hover {
 		transition: all 0.1s ease-in-out;
-		transform: scale(1.1) skewX(-2deg);
+		transform: scale(1.03) skewX(-2deg);
 	}
 
 	a:visited {
@@ -239,6 +247,9 @@
 	}
 
 	@media screen and (max-width: 600px) {
+		#main {padding: 10px;}
+		#hdr img.small { max-height: 5dvh; }
+
 		h1,h2 {
 			font-size: 2.5rem;
 		}
@@ -256,7 +267,7 @@
 	}
 
 	.frame {
-		border: 30px solid white;
+		border: 20px solid white;
 		border-image: url(/border.svg) 30% fill;
 		border-image-repeat: stretch;
 	}
@@ -265,13 +276,14 @@
 		background: black;
 		width: 100%;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
 
 	.bracket {
 		background-image: url(/bracket.svg);
-		background-position: bottom 0 left 0;
+		background-position: bottom 0 left -1px;
 		padding-left: 15px;
 		padding-bottom: 5px;
 		margin: 15px 0;
@@ -283,5 +295,19 @@
 		color: #d9d9d9;
     font-size: 0.9rem;
     margin-top: 5px;
+	}
+	
+	/* https://stackoverflow.com/a/54702294 */
+	.rainbow {
+		background: linear-gradient(to right, #ff1797, #ffc917);
+		background-clip: text;
+		color: transparent;
+		animation: rainbow_animation 6s ease-in-out infinite;
+		background-size: 400% 100%;
+	}
+
+	@keyframes rainbow_animation {
+		0%,100% { background-position: 0 0; }
+		50% { background-position: 50% 0; }
 	}
 </style>
