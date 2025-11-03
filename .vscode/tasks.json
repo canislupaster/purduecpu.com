@@ -8,6 +8,12 @@
 			"problemMatcher": [],
 			"label": "npm: build",
 			"detail": "astro check && astro build"
+		},
+		{
+			"label": "deploy",
+			"type": "shell",
+			"command": "cd server && zsh ./deploy.sh",
+			"problemMatcher": []
 		}
 	]
 }

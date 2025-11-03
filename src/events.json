@@ -1,22 +1,19 @@
 [
 	{
-		"name": "2024 NAQ",
-		"desc": "The 2024 NAQ is happening! There will be pizza to accompany this 5-hour contest.",
-		"time": "Oct. 5th, 2-7 pm in LWSN 3102AB"
-	},
-	{
-		"name": "B-Involved Fair",
-		"desc": "Visit us at the club fair this fall!",
-		"time": "Aug. 17th, Intramural Gold Playing Fields (probably)"
-	},
-	{
-		"name": "Codeforces Round 967",
-		"desc": "Join us to individually participate in CF Round 967, then discuss the problems afterwards.",
-		"time": "Aug. 20th, 10:30 AM in BRNG 7150"
-	},
-	{
-		"name": "Fall 2024 Callout",
-		"desc": "Come for some coding games and pizza!",
-		"time": "Aug. 26th 6 to 7:30 PM in LWSN B155"
+		"name": "HAMMERWARS 2025",
+		"desc": "Our annual programming contest. Sponsored by Hudson River Trading and Roblox. Register now!",
+		"time": "November 16, 2025 in LWSN"
+	}, {
+		"name": "East-Central North America Contest (ECNA)",
+		"desc": "This regional contest will be held on campus at our Purdue site. The top team will go to the North America Championship if they qualify for it.",
+		"time": "November 9, 2025 in LWSN"
+	}, {
+		"name": "North American Qualifier",
+		"desc": "The beginning of your ICPC journey — your placement in this contest determines your team at the ECNA regionals.",
+		"time": "October 11th, 2 - 7 PM in LWSN 3102AB"
+	},{
+		"name": "Fall 2025 Callout",
+		"desc": "Come to learn about the club and participate in a Codeforces mashup!",
+		"time": "September 12, 7-9 PM in LWSN 1142 (lecture hall by the commons)"
 	}
 ]

@@ -1,0 +1,24 @@
+---
+import Main from "../components/main.astro"
+import { discordUrl } from "../consts"
+import meetings from "../meetings.json"
+---
+
+<Main>
+	<h1>Meeting schedule</h1>
+	<p>Get notified for each meeting (and other stuff) by being in the <a href={discordUrl} >Discord server</a>!</p>
+	
+	<hr/>
+	<div style="display: flex; flex-direction: column; gap: 20px; align-items: center;" >
+		{meetings.map(v=><div class="frame" style="align-self: stretch" >
+			<div style="display: flex; flex-wrap: wrap; align-items: baseline; width: 100%; justify-content: space-between" >
+				<h4 style="margin: 0;">{v.name}</h4>
+				<span >by <b>{v.author}</b></span>
+			</div>
+			<span>
+				{v.time}
+			</span>
+		</div>)}
+		<span>More coming soon!</span>
+	</div>
+</Main>
