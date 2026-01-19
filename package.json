@@ -17,7 +17,7 @@
     "typescript": "^5"
   },
   "devDependencies": {
-    "discord.js": "^13.17.1",
+    "discord.js": "^14",
     "tsx": "^4.21"
   }
 }
