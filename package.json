@@ -7,13 +7,17 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "egor": "tsx --env-file=.env getEgorMessages.ts"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "astro": "^5.8.0",
-    "discord.js": "^14.15.3",
-    "sharp": "^0.33.5",
-    "typescript": "^5.5.3"
+    "@astrojs/check": "^0.9",
+    "astro": "^5",
+    "sharp": "^0.34",
+    "typescript": "^5"
+  },
+  "devDependencies": {
+    "discord.js": "^14",
+    "tsx": "^4.21"
   }
 }

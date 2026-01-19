@@ -91,17 +91,20 @@ const d = desc ?? `The Competitive Programmers Union is a club at Purdue Univers
     </div>
     {!hideSidebar && <div id="sidebar" >
 			<slot name="sidebar" />
+
 			<a href={discordUrl} >
 				<button style="display: flex; flex-direction: column; gap: 15px; align-items: center" >
-					<Image alt="discord" width={40} src={discord} /> Join the Discord to keep up with club activities
+					<Image alt="discord" width={40} src={discord} /> Join the Discord!
 				</button>
 			</a>
+
 			<p>Also check out our</p>
 			<a href="/meetings" >
 				<button style="margin-top: 0" >
 					<b>Weekly meeting schedule</b>
 				</button>
 			</a>
+
       <h3 class="top bracket" >📅 events</h3>
 			<div id="events" style="display: flex; flex-direction: column; gap: 15px; align-items: stretch;" >
 				{events.map((x) => 

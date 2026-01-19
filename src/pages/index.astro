@@ -1,11 +1,11 @@
 ---
-import { Image } from "astro:assets"
-import Main from "../components/main.astro"
-import logo from "./logo.svg"
-import fame from "../fame.json"
+import { Image } from "astro:assets";
+import Main from "../components/main.astro";
 import { discordUrl } from "../consts";
-import cfIcon from "./codeforces.svg"
-import vscIcon from "./vscode.png"
+import fame from "../fame.json";
+import cfIcon from "./codeforces.svg";
+import logo from "./logo.svg";
+import vscIcon from "./vscode.png";
 
 const cfs = fame.filter(x => typeof x.cf == "string").map((x) => x.cf);
 
@@ -94,11 +94,11 @@ const fameCF = fame.map(x => {
 		</div>
 	</Fragment>
 
-	<div class="bracket" style="padding-left: 2rem; padding-bottom: 1rem; font-size: 1.5rem" >
+	<!-- <div class="bracket" style="padding-left: 2rem; padding-bottom: 1rem; font-size: 1.5rem" >
 		<p class="rainbow" >
 			Update: Registration for <a style="color: white" href="https://hammerwars.win" ><b>HAMMERWARS 2025</b></a>, our Purdue programming contest, is now open! <a href="https://hammerwars.win" >Register now!</a> Sponsored by <a href="https://www.hudsonrivertrading.com"><b>Hudson River Trading</b></a> and <a href="https://roblox.com"><b>Roblox</b></a>.
 		</p>
-	</div>
+	</div> -->
 
 	<h3>Purdue's community for competitive programming</h3>
 	<p>
