@@ -10,7 +10,7 @@ const client = new Client({ intents: [
 ] });
 
 const p=new Promise<void>((res,rej) => {
-	client.once("ready", ()=>res());
+	client.once("clientReady", ()=>res());
 	client.once("error", (err)=>rej(err));
 });
 
