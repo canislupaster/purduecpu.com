@@ -17,7 +17,7 @@ const p=new Promise<void>((res,rej) => {
 await client.login(process.env.DISCORD_BOT_TOKEN);
 await p;
 
-const chanMgr = (await client.guilds.fetch(discordGuildId)).channels;
+const {channels, emojis} = (await client.guilds.fetch(discordGuildId));
 
 const msgs = await Promise.all([
 	["749361934515699726", "1170477843537481818"],
@@ -33,11 +33,32 @@ const msgs = await Promise.all([
 	["749361934515699726", "1007892978611798038"],
 	["749361934515699726", "1153430137866559510"],
 	["749361934515699726", "1151653076210548796"],
+	null,
 	["749361934515699726", "1272413438500667392"],
 	["749361934515699726", "1272418820870635551"],
-	["749361934515699726", "1170559298934423552"]
-].map(async ([chan,id]) => {
-	const c = await chanMgr.fetch(chan);
+	["749361934515699726", "1170559298934423552"],
+	null,
+	["749361934515699726","1458297448371064834"],
+	["749361934515699726","1458297503186288661"],
+	["749361934515699726","1458297554235297822"],
+	["749361934515699726","1458297576062189710"],
+	["749361934515699726","1458297607020347442"],
+	["749361934515699726","1458297627140554954"],
+	["749361934515699726","1458297682266161254"],
+	["749361934515699726","1458297739208163543"],
+	["749361934515699726","1458297757763895381"],
+	["749361934515699726","1458297771529474276"],
+	["749361934515699726","1458297876957499434"],
+	["749361934515699726","1458297909236727863"],
+	null,
+	["1462301043479023924","1462682655505256482"],
+	["1462301043479023924","1462682693232889918"],
+	["1462301043479023924","1462682715378810902"],
+].map(async x => {
+	if (!x) return null;
+
+	const [chan, id] = x;
+	const c = await channels.fetch(chan);
 	if (!(c instanceof TextChannel)) throw "not text channel";
 	const msg = await c.messages.fetch(id);
 	
@@ -50,9 +71,10 @@ const msgs = await Promise.all([
 }));
 
 const out = msgs.reduce<typeof msgs>((a,b) => {
-	if (a.length>0 && a[a.length-1].username==b.username) {
-		return [...a.slice(0,a.length-1), {...a[a.length-1],
-			content: [...a[a.length-1].content, ...b.content]}];
+	const last = a.length>0 ? a[a.length-1] : null;
+	if (last && b!=null && last.username==b.username) {
+		return [...a.slice(0,a.length-1), {...last,
+			content: [...last.content, ...b.content]}];
 	}
 
 	return [...a,b];
