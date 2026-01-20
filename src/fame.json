@@ -83,5 +83,20 @@
 		"name": "Pratyanch Jain",
 		"status": "Official mascot (involuntary)",
 		"cf": "pratyanch_jain"
+	},
+	{
+		"name": "Jimmy Dinh",
+		"status": "ICPC NAC 2026",
+		"cf": "jd04"
+	},
+	{
+		"name": "Leo Lee",
+		"status": "ICPC NAC 2026",
+		"cf": "ygll"
+	},
+	{
+		"name": "Jack Fang",
+		"status": "ICPC NAC 2026",
+		"cf": "Orange905"
 	}
 ]
