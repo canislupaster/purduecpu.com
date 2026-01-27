@@ -1,5 +1,13 @@
 [
 	{
+		"name": "General Meeting",
+		"desc": "Come for cookies, Matthew's C++ propaganda, and a Codeforces contest!",
+		"time": "January 23, 6-8 PM in LWSN B151"
+	},{
+		"name": "Spring 2026 Callout",
+		"desc": "Come to learn about the club and participate in a Codeforces mashup!",
+		"time": "January 23, 6-8 PM in LWSN B151"
+	},{
 		"name": "CPU x Roblox: The HammerWars Afterparty",
 		"desc": "Come for a Roblox info-session, boba, a few fun challenges and HammerWars shirts!",
 		"time": "Dec 7, 2025 in WALC 1121"
