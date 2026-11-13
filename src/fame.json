@@ -1,7 +1,7 @@
 [
 	{
 		"name": "Trung Dang",
-		"status": "Alumni, ICPC WF 2022/24",
+		"status": "Alumni, ICPC WF 2022/2024",
 		"cf": "Kuroni"
 	},
 	{
@@ -16,47 +16,47 @@
 	},
 	{
 		"name": "Richard Li",
-		"status": "Alumni, ICPC WF 21/22/24",
+		"status": "Alumni, ICPC WF 2021/2022/2024",
 		"cf": "richzli"
 	},
 	{
 		"name": "Riley Borgard",
-		"status": "President 2020-2021, Alumni, ICPC WF 21/22",
+		"status": "President 2020-2021, Alumni, ICPC WF 2021/2022",
 		"cf": "Monogon"
 	},
 	{
 		"name": "Devin Qu",
-		"status": "Alumni, ICPC WF 24",
+		"status": "Alumni, ICPC WF 2024",
 		"cf": "devinqu"
 	},
 	{
 		"name": "Wilbert Chu",
-		"status": "Current student, ICPC NAC 25, WF 25, ICPC NAC 27",
+		"status": "Current student, ICPC NAC 2025, WF 2025, ECNA 2026 Champion, ICPC NAC 2027",
 		"cf": "golomb"
 	},
 	{
 		"name": "Peter Jin",
-		"status": "Alumni, ICPC WF 24. bye petorz",
+		"status": "Alumni, ICPC WF 2024. bye petorz",
 		"cf": "shcal"
 	},
 	{
 		"name": "Minh Nguyen",
-		"status": "ICPC WF 24",
+		"status": "ICPC WF 2024",
 		"cf": "TomOwO"
 	},
 	{
 		"name": "Egor Gagushin",
-		"status": "Alumni, ICPC WF 24. rip egorz :(",
+		"status": "Alumni, ICPC WF 2024. rip egorz :(",
 		"cf": "eggag32"
 	},
 	{
 		"name": "Thomas Marlowe",
-		"status": "President 2024-2026, ICPC NAC 25, WF 25",
+		"status": "President 2024-2026, ICPC NAC 2025, WF 2025",
 		"cf": "canine"
 	},
 	{
 		"name": "Robert Lee",
-		"status": "Current student, ICPC NAC 25, WF 25",
+		"status": "Current student, ICPC NAC 2025, WF 2025",
 		"cf": "RobertYL"
 	},
 	{
@@ -101,17 +101,27 @@
 	},
 	{
 		"name": "Matthew Li",
-		"status": "President 2026-Present, ICPC NAC 27",
+		"status": "President 2026-Present, ICPC ECNA 2026 Champion, NAC 2027",
 		"cf": "hyprox"
 	},
 	{
-		"name": "Tanishq Pauskar",
-		"status": "ICPC NAC 27",
-		"cf": "Puddles_Penguin"
+		"name": "Munir Kudrati-Plummer",
+		"status": "Treasurer 2026-2027",
+		"cf": "MunirKP"
 	},
 	{
-		"name": "Munir Kudrati-Plummer",
-		"status": "Treasurer 2026-Present",
-		"cf": "MunirKP"
+		"name": "Dat Le",
+		"status": "Media Head 2026-Present",
+		"cf": "ldss"
+	},
+	{
+		"name": "Eric Jin",
+		"status": "Treasurer 2027-Present",
+		"cf": "greateric"
+	},
+	{
+		"name": "Tanishq Pauskar",
+		"status": "ICPC ECNA 2026 Champion, NAC 2027",
+		"cf": "Puddles_Penguin"
 	}
 ]
