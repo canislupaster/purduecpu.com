@@ -11,7 +11,7 @@
 	},
 	{
 		"name": "Arvind Ramaswami",
-		"status": "Current student and CP2 instructor, ICPC WF 2020",
+		"status": "Current student and CP2/3 instructor, ICPC WF 2020",
 		"cf": "arvindr9"
 	},
 	{
@@ -31,7 +31,7 @@
 	},
 	{
 		"name": "Wilbert Chu",
-		"status": "Current student, ICPC NAC 25, WF 25",
+		"status": "Current student, ICPC NAC 25, WF 25, ICPC NAC 27",
 		"cf": "golomb"
 	},
 	{
@@ -101,8 +101,13 @@
 	},
 	{
 		"name": "Matthew Li",
-		"status": "President 2026-Present",
+		"status": "President 2026-Present, ICPC NAC 27",
 		"cf": "hyprox"
+	},
+	{
+		"name": "Tanishq Pauskar",
+		"status": "ICPC NAC 27",
+		"cf": "Puddles_Penguin"
 	},
 	{
 		"name": "Munir Kudrati-Plummer",
