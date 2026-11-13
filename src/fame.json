@@ -1,7 +1,7 @@
 [
 	{
 		"name": "Trung Dang",
-		"status": "Alumni, ICPC WF 2022/2024",
+		"status": "Alumni, ICPC ECNA 2022 champion, WF 2022/2024",
 		"cf": "Kuroni"
 	},
 	{
@@ -21,17 +21,17 @@
 	},
 	{
 		"name": "Riley Borgard",
-		"status": "President 2020-2021, Alumni, ICPC WF 2021/2022",
+		"status": "President 2020-2021, Alumni, ICPC WF 2021/2022, ECNA 2022 champion",
 		"cf": "Monogon"
 	},
 	{
 		"name": "Devin Qu",
-		"status": "Alumni, ICPC WF 2024",
+		"status": "Alumni, ICPC ECNA 2022 champion WF 2024",
 		"cf": "devinqu"
 	},
 	{
 		"name": "Wilbert Chu",
-		"status": "Current student, ICPC NAC 2025, WF 2025, ECNA 2026 Champion, ICPC NAC 2027",
+		"status": "Current student, ICPC NAC 2025, WF 2025, ECNA 2026 champion, ICPC NAC 2027",
 		"cf": "golomb"
 	},
 	{
@@ -101,7 +101,7 @@
 	},
 	{
 		"name": "Matthew Li",
-		"status": "President 2026-Present, ICPC ECNA 2026 Champion, NAC 2027",
+		"status": "President 2026-Present, ICPC ECNA 2026 champion, NAC 2027",
 		"cf": "hyprox"
 	},
 	{
@@ -121,7 +121,7 @@
 	},
 	{
 		"name": "Tanishq Pauskar",
-		"status": "ICPC ECNA 2026 Champion, NAC 2027",
+		"status": "ICPC ECNA 2026 champion, NAC 2027",
 		"cf": "Puddles_Penguin"
 	}
 ]
